@@ -21,8 +21,7 @@ export default defineComponent({
           </a>
         </div>
         <div class="copyright">
-          Copyright &copy; 2022 fhtwl 备案号:
-          <a href="https://beian.miit.gov.cn/">鄂ICP备2022005996号-1</a>
+          Copyright &copy; 2022
         </div>
       </div>
     );

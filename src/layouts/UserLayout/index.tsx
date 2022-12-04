@@ -22,7 +22,7 @@ export default defineComponent({
               <div class="header">
                 <a href="/">
                   {/* <!-- <img src="~@/assets/logo.svg" class="logo" alt="logo"> --> */}
-                  <span class="title">FHTWL</span>
+                  <span class="title">egg-ts</span>
                 </a>
               </div>
               <div class="desc">管理平台</div>
@@ -37,8 +37,7 @@ export default defineComponent({
                 <a href="_self">条款</a>
               </div>
               <div class="copyright">
-                Copyright &copy; 2022 fhtwl 备案号:
-                <a href="https://beian.miit.gov.cn/">鄂ICP备2022005996号-1</a>
+                Copyright &copy; 2022
               </div>
             </div>
           </div>
