@@ -1,7 +1,7 @@
 import { PaginationResponse } from '@/components/TableLayout';
 import http from '@/utils/http';
 
-const User = `/system/user`;
+const User = `/api/user`;
 
 const api = {
   getUserList: `${User}/list`,

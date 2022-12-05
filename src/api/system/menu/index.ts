@@ -1,6 +1,6 @@
 import { PaginationResponse } from '@/components/TableLayout';
 import http from '@/utils/http';
-const Menu = `/system/menu`;
+const Menu = `/api/menu`;
 
 const api = {
   getMenuList: `${Menu}/list`,
