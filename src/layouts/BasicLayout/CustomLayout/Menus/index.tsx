@@ -31,7 +31,6 @@ export default defineComponent({
     const defaultOpenKeys = this.$route.matched
       .filter((item) => item.name && item.name !== this.$route.name)
       .map((item) => item.name);
-    console.log(defaultOpenKeys);
     return {
       selectedKeys: this.$route.matched
         .filter((item) => item.name)

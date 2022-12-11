@@ -112,7 +112,6 @@ export default defineComponent({
         const component = options.find(
           (option) => option.value == componentValue
         );
-        // console.log(options, item, componentValue, component)
         const componentName = component!.label;
         const field = component!.children!.find(
           (option) => option.value === fieldValue
@@ -136,7 +135,6 @@ export default defineComponent({
           const selectComponent = (this.value as string[]).find(
             (item) => item.split('/')[0] === component
           );
-          // console.log(selectComponent, this.value,component, field)
           // 如果当前组件没有选择字段
           if (!selectComponent) {
             return false;

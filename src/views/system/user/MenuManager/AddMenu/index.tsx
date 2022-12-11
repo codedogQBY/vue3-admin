@@ -270,7 +270,6 @@ export default defineComponent({
         instance?.proxy!.$message.success(`${title.value}成功`);
       };
       commonFormRef?.value?.formRef?.validate().then((vaild) => {
-        console.log(vaild);
         if (type.value === 'add') {
           addMenu({
             ...formData.value,

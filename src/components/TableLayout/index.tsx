@@ -168,7 +168,6 @@ export default defineComponent({
       handleChange,
     } = this;
     const { formBottom = () => {} } = $slots;
-    console.log(tableData);
     return (
       <div class="table-layout">
         <CommonForm

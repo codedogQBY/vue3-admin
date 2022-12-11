@@ -26,7 +26,6 @@ export default defineComponent({
       }
     },
     // activeKey: function (newPathKey) {
-    //   console.log(newPathKey);
     //   this.$router.push({ path: newPathKey });
     // },
   },
@@ -37,7 +36,6 @@ export default defineComponent({
   },
   methods: {
     handleEdit(targetKey: string, action: MultiTabAction) {
-      console.log(action, targetKey);
       this[action](targetKey);
     },
     remove(targetKey: string) {
@@ -98,7 +96,6 @@ export default defineComponent({
       });
     },
     closeMenuClick(action: MultiTabAction, route: string) {
-      console.log(action, route);
       this[action](route);
     },
     renderTabPaneMenu(e: string) {
@@ -126,7 +123,6 @@ export default defineComponent({
       );
     },
     handleChange(key: string) {
-      console.log(key);
       this.activeKey = key;
       this.$router.push({ path: key });
     },
@@ -136,7 +132,6 @@ export default defineComponent({
       handleEdit,
       $data: { pages },
     } = this;
-    console.log(pages);
     const panes = pages.map((page) => {
       return (
         <a-tab-pane

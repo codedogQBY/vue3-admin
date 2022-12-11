@@ -39,7 +39,6 @@ export default defineComponent({
         };
       }) => {
         const { item } = slotData;
-        console.log(item);
         const itemSlots = {
           actions: () => {
             return (

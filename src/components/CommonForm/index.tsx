@@ -152,7 +152,6 @@ export default defineComponent({
         extraConfig = {},
         className = '',
       } = item;
-      console.log(extraConfig);
       let { placeholder } = item;
       if (extraConfig) {
         extraConfig.placeholder = extraConfig.placeholder || `请输入${label}`;
@@ -406,7 +405,6 @@ export default defineComponent({
   },
   render() {
     const { formJson = [], formData, layout } = this;
-    console.log(formData);
     const json = formJson instanceof Array ? formJson : formJson(formData);
     return (
       <a-form

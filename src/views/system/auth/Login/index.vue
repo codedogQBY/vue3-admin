@@ -88,7 +88,6 @@ export default defineComponent({
       setLoginError(false);
     };
     const requestFailed = function (res: unknown) {
-      console.log('requestFailed', res);
       setLoginError(true);
       handleUpdateCode();
     };

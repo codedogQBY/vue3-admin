@@ -24,7 +24,6 @@ export default defineComponent({
       $route: { meta },
       multiTab,
     } = this;
-    console.log(this.$slots);
     const RootBox = (
       _props: unknown,
       { slots }: { slots: { default: () => unknown } }

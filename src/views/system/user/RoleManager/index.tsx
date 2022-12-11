@@ -50,7 +50,6 @@ export default defineComponent({
     ]);
 
     const handleAddClick = function () {
-      console.log(addRoleRef);
       addRoleRef.value?.show('add');
     };
     const handleEditClick = function (

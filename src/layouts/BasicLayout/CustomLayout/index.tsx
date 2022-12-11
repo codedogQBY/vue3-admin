@@ -32,7 +32,6 @@ export default defineComponent({
       const newValue = !collapsed.value;
       collapsed.value = newValue;
       props.handleCollapse(newValue);
-      console.log(collapsed.value);
     };
     return {
       collapsed,

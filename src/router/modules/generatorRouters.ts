@@ -20,20 +20,19 @@ const constantRouterComponents: Common.Params = {
   404: () => import('@/views/system/exception/404/index.vue'),
 };
 
-function loadAllPage() {
+async function loadAllPage() {
   for (const path in modules) {
-    modules[path]().then((mod) => {
-      const file = mod.default;
-      console.log(file.name);
+    const mod = await modules[path]();
+
+    const file = mod.default;
+    if (file.name) {
       file.displayName = file.name;
       if (file.isPage) {
-        constantRouterComponents[`${file.name}`] = () => Promise.resolve(file);
+        constantRouterComponents[`${file.name}`] = () => import(path);
       }
-    });
+    }
   }
 }
-// 获取所有的页面并放入路由表中
-loadAllPage();
 
 // 前端未找到页面路由（固定不用改）
 const notFoundRouter = {
@@ -78,19 +77,23 @@ const rootRouter: UserRes.GetUserMenu = {
  * 动态生成菜单
  * @returns
  */
-export function generatorDynamicRouter(): Promise<Common.Router[]> {
+export async function generatorDynamicRouter(): Promise<Common.Router[]> {
+  // 获取所有的页面并放入路由表中
+  await loadAllPage();
   return new Promise((resolve, reject) => {
     getUserMenu()
       .then((result) => {
-        const menuNav = [];
-        const childrenNav: UserRes.GetUserMenu[] = [];
-        // 后端数据, 根级树数组,  根级 PID
-        listToTree(result as unknown as Common.List, childrenNav, 0);
-        rootRouter.children = childrenNav;
-        menuNav.push(rootRouter);
-        const routers = generator(menuNav);
-        routers.push(notFoundRouter);
-        resolve(routers);
+        setTimeout(() => {
+          const menuNav = [];
+          const childrenNav: UserRes.GetUserMenu[] = [];
+          // 后端数据, 根级树数组,  根级 PID
+          listToTree(result as unknown as Common.List, childrenNav, 0);
+          rootRouter.children = childrenNav;
+          menuNav.push(rootRouter);
+          const routers = generator(menuNav);
+          routers.push(notFoundRouter);
+          resolve(routers);
+        });
       })
       .catch((err) => {
         reject(err);
@@ -111,6 +114,8 @@ export const generator = (
   return routerMap.map((item) => {
     const { component, meta, key, permission, type } = item;
     const { title, show, hideChildren, hiddenHeaderContent, icon } = meta;
+    console.log(title, constantRouterComponents[component!]);
+
     const currentRouter: Common.Router = {
       // 如果路由设置了 path，则作为默认 path，否则 路由地址 动态拼接生成如 /dashboard/my-dashboard
       path: item.path || `${parent?.path || ''}/${key}`,

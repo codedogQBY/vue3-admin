@@ -50,7 +50,6 @@ export default defineComponent({
     };
 
     const realTime = function (data: Previews) {
-      console.log(data);
       previews.value = data;
     };
 
@@ -65,7 +64,6 @@ export default defineComponent({
       const formData = new FormData();
       formData.append('img', imgFile.value as unknown as string);
       uploadImg(formData).then((response) => {
-        console.log('upload response:', response);
         instance?.proxy?.$message.success('上传成功');
         emit('ok', response.path);
         visible.value = false;
