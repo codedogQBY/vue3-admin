@@ -229,6 +229,8 @@ export default defineComponent({
       newType: ActionType = 'add',
       val: UserFormData = defaultFormData
     ) {
+      console.log(newType, val);
+
       type.value = newType;
       switch (newType) {
         case 'add': {

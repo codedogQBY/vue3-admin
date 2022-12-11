@@ -116,6 +116,7 @@ export default defineComponent({
     ) {
       addUserRef?.value?.show('query', selectNodes[0]);
     };
+
     const reSearch = function () {
       tableLayoutRef?.value?.resetSearch();
     };
@@ -149,7 +150,7 @@ export default defineComponent({
         onClick: handleDetailsClick,
         action: 'query',
         vAction: 'system:user:query',
-        icon: 'details',
+        icon: 'query',
         text: '详情',
       },
     ]);

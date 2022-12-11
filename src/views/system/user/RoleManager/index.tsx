@@ -136,7 +136,7 @@ export default defineComponent({
         onClick: handleDetailsClick,
         action: 'query',
         vAction: 'system:role:query',
-        icon: 'details',
+        icon: 'query',
         text: '详情',
       },
       {
@@ -144,7 +144,7 @@ export default defineComponent({
         onClick: handleEditMenuClick,
         action: 'query',
         vAction: 'system:role:editPermission',
-        icon: 'setting',
+        icon: 'permission',
         text: '权限设置',
       },
     ]);

@@ -10,7 +10,7 @@ import {
 import { useStore } from '@/store/system/user';
 import md5 from 'md5';
 import './index.less';
-import demo from './demo';
+// import demo from './demo';
 
 const userStore = useStore();
 
@@ -56,7 +56,7 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      instance?.proxy?.$notification.success(demo());
+      // instance?.proxy?.$notification.success(demo());
     });
 
     const handleSubmit = function () {

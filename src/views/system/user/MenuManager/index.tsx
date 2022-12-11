@@ -138,7 +138,7 @@ export default defineComponent({
         onClick: handleDetailsClick,
         action: 'query',
         vAction: 'system:menu:query',
-        icon: 'details',
+        icon: 'query',
         text: '详情',
       },
     ]);

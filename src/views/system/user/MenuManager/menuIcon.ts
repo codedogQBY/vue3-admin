@@ -1,26 +1,41 @@
 export const menuIconList = [
   {
-    type: 'data-source',
+    type: 'dashboard',
+  },
+  {
+    type: 'delete',
+  },
+  {
+    type: 'edit',
+  },
+  {
+    type: 'query',
+  },
+  {
+    type: 'my',
+  },
+  {
+    type: 'role',
+  },
+  {
+    type: 'add',
+  },
+  {
+    type: 'user-center',
+  },
+  {
+    type: 'user',
+  },
+  {
+    type: 'menu',
   },
   {
     type: 'user-setting',
   },
   {
-    type: 'component',
+    type: 'work-data',
   },
   {
-    type: 'user-manager',
-  },
-  {
-    type: 'dashboard',
-  },
-  {
-    type: 'menu-setting',
-  },
-  {
-    type: 'board',
-  },
-  {
-    type: 'edit',
+    type: 'permission',
   },
 ];
