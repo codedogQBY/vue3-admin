@@ -1,5 +1,5 @@
 import http from '@/utils/http';
-const Auth = '/system/auth';
+const Auth = '/api/auth';
 const api = {
   login: `${Auth}/login`,
   logout: `${Auth}/logout`,

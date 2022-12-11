@@ -41,7 +41,7 @@ export default defineComponent({
     function setLoading(bool: boolean) {
       loading.value = bool;
     }
-    const getCode = () => `/api/system/common/code?v=${Math.random()}`;
+    const getCode = () => `/api/api/getCode`;
     const code = ref(getCode());
     function handleUpdateCode() {
       code.value = getCode();

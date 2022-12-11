@@ -188,14 +188,12 @@ export default defineComponent({
                 duration: 2,
               });
               instance?.proxy?.$message.destroy();
-              // clearInterval(interval);
               state.value.time = 60;
               state.value.emailSendBtn = true;
               registerBtn.value = false;
             })
             .catch((res) => {
               instance?.proxy?.$message.destroy();
-              // clearInterval(interval);
               instance?.proxy?.$message.error(res.response.data.msg);
               state.value.time = 60;
               state.value.emailSendBtn = true;
