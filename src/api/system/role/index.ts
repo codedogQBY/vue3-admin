@@ -1,7 +1,7 @@
 import { PaginationResponse } from '@/components/TableLayout';
 import http from '@/utils/http';
 
-const Role = `/api/role`;
+const Role = `/system/role`;
 
 const api = {
   getRoleList: `${Role}/list`,

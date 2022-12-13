@@ -27,6 +27,7 @@ export default defineComponent({
     const confirmLoading = ref<boolean>(false);
     const emailTime = ref<number>(0);
     const emailCodeLoading = ref<boolean>(false);
+    const user = useStore();
     const callback = () => {
       emailCodeLoading.value = false;
       emailTime.value = 60;
@@ -39,7 +40,10 @@ export default defineComponent({
     };
     const handleEmailCode = function () {
       emailCodeLoading.value = true;
-      email()
+      email({
+        userName: user.userName,
+        email: user.email,
+      })
         .then(() => {
           callback();
           instance?.proxy?.$message.success('验证码邮件发送成功');
@@ -145,10 +149,10 @@ export default defineComponent({
               );
 
               setTimeout(() => {
-                const userStore = useStore();
-                userStore.logout();
-                instance?.proxy?.$router.push({ name: 'login' });
-                reset();
+                user.logout().then(() => {
+                  instance?.proxy?.$router.push({ name: 'login' });
+                  reset();
+                });
               }, 1500);
             })
             .catch(() => {

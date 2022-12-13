@@ -5,7 +5,6 @@ import { defineComponent, PropType, ref } from 'vue';
 import { FormInstance } from 'ant-design-vue';
 import { Fun } from '@fhtwl-admin/common';
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons-vue';
-
 export enum AcceptType {
   ALL = 0,
   IMG,

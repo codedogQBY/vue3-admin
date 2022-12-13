@@ -114,8 +114,6 @@ export const generator = (
   return routerMap.map((item) => {
     const { component, meta, key, permission, type } = item;
     const { title, show, hideChildren, hiddenHeaderContent, icon } = meta;
-    console.log(title, constantRouterComponents[component!]);
-
     const currentRouter: Common.Router = {
       // 如果路由设置了 path，则作为默认 path，否则 路由地址 动态拼接生成如 /dashboard/my-dashboard
       path: item.path || `${parent?.path || ''}/${key}`,

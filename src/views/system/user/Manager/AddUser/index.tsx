@@ -197,6 +197,7 @@ export default defineComponent({
       }
       const callBack = () => {
         handleCancel();
+        emit('update');
         instance?.proxy?.$message.success(`${title.value}成功`);
       };
 

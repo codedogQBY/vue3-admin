@@ -1,4 +1,4 @@
-export const ApiCodePath = '/api/getCode';
+export const ApiCodePath = '/api/system/common/code';
 /**
  * 获取验证码
  * @returns

@@ -19,6 +19,7 @@ export const useStore = defineStore('user', {
     role: undefined as UserRes.StoreRole | undefined,
     info: undefined as System.UserInfo | undefined,
     email: '',
+    userName: '',
   }),
   getters: {
     nameLength: (state) => state.name.length,
@@ -70,14 +71,14 @@ export const useStore = defineStore('user', {
                 }
               );
               this.role = result.role;
-              this.info = result.info;
             } else {
               reject(new Error('getInfo: roles must be a non-null array !'));
             }
+            this.info = result.info;
             this.name = result.info.nickName;
             this.avatar = result.info.avatar;
             this.email = result.email;
-
+            this.userName = result.userName;
             resolve(response);
           })
           .catch((error) => {

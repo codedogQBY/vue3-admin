@@ -1,7 +1,8 @@
 import { PaginationResponse } from '@/components/TableLayout';
 import http from '@/utils/http';
+import md5 from 'md5';
 
-const User = `/api/user`;
+const User = `/system/user`;
 
 const api = {
   getUserList: `${User}/list`,
@@ -43,8 +44,8 @@ export function editUserById(params: UserReq.EditUserByIdReq) {
  * 发送邮件获取验证码
  * @returns
  */
-export function email() {
-  return http.post(api.email);
+export function email(params: { email: string; userName: string }) {
+  return http.post(api.email, params);
 }
 
 /**
@@ -98,5 +99,5 @@ export function addUser(params: {
   nickName: string;
   email: string;
 }) {
-  return http.post(api.addUser, params);
+  return http.post(api.addUser, { ...params, password: md5(params.password) });
 }
